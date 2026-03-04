@@ -1,43 +1,70 @@
 # E-Commerce Backend API
 
-Spring Boot based backend API for an e-commerce system.
+A scalable RESTful backend for an e-commerce system built using Spring Boot. The application provides secure authentication with JWT and role-based authorization, along with product management, cart operations, and order processing.
 
 ## Features
-- JWT Authentication
-- Role Based Access Control
-- Product Management
-- Cart System
-- Order Placement
-- Pagination
-- Global Exception Handling
+
+* JWT Authentication & Authorization
+* Role-Based Access Control (Admin/User)
+* Product Management APIs
+* Cart System
+* Order Processing
+* Pagination Support
+* Global Exception Handling
+* Clean Layered Architecture (Controller, Service, Repository)
 
 ## Tech Stack
-- Java
-- Spring Boot
-- Spring Security
-- JWT
-- MySQL
-- JPA / Hibernate
+
+* Java
+* Spring Boot
+* Spring Security
+* JWT
+* MySQL
+* JPA / Hibernate
+* Maven
 
 ## API Endpoints
 
-Auth
+### Authentication
+
 POST /auth/register
 POST /auth/login
 
-Products
-GET /products
+Example Request:
+{
+"name": "Harpreet",
+"email": "user@test.com",
+"password": "123456"
+}
 
-Cart
+### Products
+
+GET /products
+POST /products (Admin only)
+
+### Cart
+
 POST /cart/add
 GET /cart
 
-Orders
+### Orders
+
 POST /orders
 GET /orders
 
-Users
+### Users
+
 GET /users (Admin only)
+
+## Project Structure
+
+controller → Handles API requests
+service → Business logic layer
+repository → Database operations
+entity → Database entities
+security → JWT & security configuration
+dto → Data transfer objects
+exception → Global exception handling
 
 ## Run Locally
 
